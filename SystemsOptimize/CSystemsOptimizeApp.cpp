@@ -45,7 +45,8 @@ BOOL CSystemsOptimizeApp::InitInstance()
 	INITCOMMONCONTROLSEX InitCtrls;
 	InitCtrls.dwSize = sizeof(InitCtrls);
 	
-	// ②: 
+	// ②:	QASADRFTGHJKL;P[']
+
 	// 将它设置为包括所有要在应用程序中使用的公共控件类。
 	InitCtrls.dwICC = ICC_WIN95_CLASSES;
 	InitCommonControlsEx(&InitCtrls);

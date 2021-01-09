@@ -23,7 +23,6 @@
 #define IDD_DISK_DIALOG                 142
 #define IDD_LITTER_DIALOG               143
 #define IDD_TASK_DIALOG                 144
-#define IDR_MENU1                       145
 #define IDB_ITEMBITMAP                  146
 #define IDD_SELECT_DIALOG               148
 #define IDB_BITBLANK                    149
@@ -46,6 +45,7 @@
 #define IDB_BITMAP7                     192
 #define IDB_BITMAP8                     193
 #define IDB_BITMAP9                     194
+#define IDR_MENU1                       208
 #define IDC_FRAME                       1000
 #define IDC_BUTINTERNET                 1001
 #define IDC_STACONTRAL                  1002
@@ -101,19 +101,24 @@
 #define IDC_CHECK21                     1050
 #define IDC_CHECK22                     1051
 #define IDC_BUTTON3                     1051
+#define IDC_TREE1                       1051
 #define IDC_CHECK23                     1052
 #define IDC_CHECK24                     1053
 #define IDC_CHECK25                     1054
 #define ID_MENUREF                      32771
 #define ID_MENUSTOP                     32772
+#define ID_32774                        32774
+#define ID_BUTTON2                      32777
+#define ID_32778                        32778
+#define ID_Menu                         32779
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        201
-#define _APS_NEXT_COMMAND_VALUE         32773
-#define _APS_NEXT_CONTROL_VALUE         1050
+#define _APS_NEXT_RESOURCE_VALUE        210
+#define _APS_NEXT_COMMAND_VALUE         32780
+#define _APS_NEXT_CONTROL_VALUE         1052
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

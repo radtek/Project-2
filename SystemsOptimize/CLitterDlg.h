@@ -14,22 +14,42 @@
 class CLitterDlg : public CDialog
 {
 public:
-	void FileDelete(CString FilePath);
-	void DeleteLitterFile();
+	//------------------------------------------------
 	CLitterDlg(CWnd* pParent = NULL);   // standard constructor
 
-	HANDLE		m_hThread;                // 线程句柄
+	/*
+	* 文件删除
+	*/
+	void FileDelete(CString FilePath);
+	/*
+	* 删除垃圾文件
+	*/
+	void DeleteLitterFile();
+
+	//------------------------------------------------
 	enum { IDD = IDD_LITTER_DIALOG };
+	HANDLE		m_hThread;                // 线程句柄
 	CListBox	m_List;
 	CComboBox	m_Combo;
 
 protected:
+	//------------------------------------------------
 	virtual void DoDataExchange(CDataExchange* pDX);
-
 	virtual BOOL OnInitDialog();
+
+	/*
+	* 选择垃圾文件类型的响应函数
+	*/
 	afx_msg void OnButselect();
+	/*
+	开始清理清理垃圾文件的响应函数
+	*/
 	afx_msg void OnButbegin();
+	/*
+	停止清理垃圾文件的响应函数
+	*/
 	afx_msg void OnButstop();
+
 	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()

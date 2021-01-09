@@ -173,8 +173,8 @@ IDD_LITTER_DIALOG DIALOGEX 0, 0, 291, 223
 STYLE DS_SETFONT | WS_CHILD
 FONT 9, "宋体", 400, 0, 0x86
 BEGIN
-    CONTROL         "选择驱动器：",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,24,24,46,8
-    COMBOBOX        IDC_COMBO1,77,22,75,30,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "选择驱动器：",IDC_STATIC,"Static",SS_SIMPLE | WS_GROUP,24,15,46,8
+    COMBOBOX        IDC_COMBO1,76,13,85,52,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
     LISTBOX         IDC_LIST1,24,40,233,143,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
     PUSHBUTTON      "选项",IDC_BUTSELECT,88,192,50,14,BS_FLAT
     PUSHBUTTON      "开始",IDC_BUTBEGIN,148,192,50,14,BS_FLAT
@@ -186,8 +186,8 @@ STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "选择垃圾文件类型"
 FONT 9, "宋体", 400, 0, 0x86
 BEGIN
-    DEFPUSHBUTTON   "确定",IDOK,199,161,50,14
-    PUSHBUTTON      "取消",IDCANCEL,254,161,50,14
+    PUSHBUTTON      "确定",IDC_BUTOK,199,161,50,14
+    PUSHBUTTON      "取消",IDC_BUTCANCEL,254,161,50,14
     CONTROL         "*.~*",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,21,23,32,10
     CONTROL         "*.ALT",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,75,23,36,10
     CONTROL         "*.FIX",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,136,23,36,10
@@ -213,6 +213,14 @@ BEGIN
     CONTROL         "*.ffl",IDC_CHECK23,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,136,123,36,10
     CONTROL         "*.ffx",IDC_CHECK24,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,197,123,36,10
     CONTROL         "*.T",IDC_CHECK25,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,247,123,28,10
+END
+
+IDD_TASK_DIALOG DIALOGEX 0, 0, 289, 236
+STYLE DS_SETFONT | WS_CHILD
+FONT 9, "宋体", 400, 0, 0x86
+BEGIN
+    CONTROL         "",IDC_TAB1,"SysTabControl32",0x0,7,7,232,195
+    CONTROL         "",IDC_LIST1,"SysListView32",LVS_REPORT | LVS_AUTOARRANGE | WS_BORDER | WS_TABSTOP,7,29,264,184,WS_EX_CLIENTEDGE
 END
 
 
@@ -310,6 +318,14 @@ BEGIN
         TOPMARGIN, 7
         BOTTOMMARGIN, 175
     END
+
+    IDD_TASK_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 282
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 229
+    END
 END
 #endif    // APSTUDIO_INVOKED
 
@@ -344,6 +360,11 @@ BEGIN
     0
 END
 
+IDD_TASK_DIALOG AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -367,6 +388,21 @@ IDB_BITBLANK            BITMAP                  "res\\空白.bmp"
 IDB_WINDOWBK            BITMAP                  "res\\首页.bmp"
 
 IDB_BITSELECT           BITMAP                  "res\\选中.bmp"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU1 MENU
+BEGIN
+    POPUP "弹出菜单"
+    BEGIN
+        MENUITEM "刷新",                          ID_MENUREF
+        MENUITEM "结束任务",                        ID_MENUSTOP
+    END
+END
 
 
 /////////////////////////////////////////////////////////////////////////////

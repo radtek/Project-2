@@ -118,7 +118,11 @@ BOOL CSystemsOptimizeDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		          // 设置小图标
 
 	// TODO: 在此添加额外的初始化代码
-	//m_Select.ShowWindow(SW_HIDE);              // 隐藏选中效果图片
+	m_Num = 0;
+	m_pTaskDlg = new CTaskDlg;
+	m_pTaskDlg->Create(IDD_TASK_DIALOG, this); // 创建系统任务管理模块
+
+	m_Select.ShowWindow(SW_HIDE);              // 隐藏选中效果图片
 	CString strText("系统加速器");
 	SetWindowText((LPCTSTR(strText)));         // 设置主窗体标题
 
@@ -182,6 +186,15 @@ HCURSOR CSystemsOptimizeDlg::OnQueryDragIcon()
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
+void CSystemsOptimizeDlg::OnClose()
+{
+	if (m_Num != 0) {
+		DestroyWindowBox(m_Num);    // 销毁当前显示的模块
+	}
+	m_pTaskDlg->DestroyWindow();    // 销毁系统任务管理模块
+	CDialog::OnClose();             // 退出程序
+}
+
 //////////////////////////////////////////////////
 // 控制面板操作
 void CSystemsOptimizeDlg::OnStaContral()
@@ -235,9 +248,9 @@ void CSystemsOptimizeDlg::OnStaLitter()
 void CSystemsOptimizeDlg::OnStaTask()
 {
 	if (m_Num != 0) {
-		//DestroyWindowBox(m_Num);
+		DestroyWindowBox(m_Num);
 	}
-	//CreateDialogBox(4);
+	CreateDialogBox(4);
 	CRect rect, rc;
 	GetDlgItem(IDC_STATASK)->GetClientRect(&rect);
 	GetDlgItem(IDC_STATASK)->MapWindowPoints(this, rect);
@@ -259,9 +272,9 @@ void CSystemsOptimizeDlg::DestroyWindowBox(int num)
 	case 3:                               // 垃圾文件整理模块
 		m_pLitterDlg->DestroyWindow();      // 销毁对话框
 		break;
-	//case 4:                               // 系统任务管理模块
-	//	m_pTaskDlg->ShowWindow(FALSE);      // 隐藏对话框
-	//	break;
+	case 4:                               // 系统任务管理模块
+		m_pTaskDlg->ShowWindow(FALSE);      // 隐藏对话框
+		break;
 	default:
 		break;
 	}
@@ -291,6 +304,9 @@ void CSystemsOptimizeDlg::CreateDialogBox(int num)
 			m_pLitterDlg->MoveWindow(fRect);          // 移动位置
 			m_pLitterDlg->ShowWindow(SW_SHOW);        // 显示对话框
 			break;
+		case 4:                                 // 系统任务管理模块
+			m_pTaskDlg->MoveWindow(fRect);       // 移动位置
+			m_pTaskDlg->ShowWindow(SW_SHOW);     // 显示对话框
 		default:
 			break;
 	}
@@ -354,8 +370,6 @@ void CSystemsOptimizeDlg::DrawDialog(UINT Flags)
 
 		int width = bitmapInfo.bmiHeader.biWidth;
 		int height = bitmapInfo.bmiHeader.biHeight;
-		//int width = 128;
-		//int height = 328;
 
 		m_TitleDrawHeight = (m_CaptionHeight + 4 > height) ?
 			m_CaptionHeight + 4 :
@@ -389,8 +403,6 @@ void CSystemsOptimizeDlg::DrawDialog(UINT Flags)
 		OldObj = memDC.SelectObject(&bitmapMinBtn);
 		int width = bitmapInfo.bmiHeader.biWidth;
 		int height = bitmapInfo.bmiHeader.biHeight;
-		//int width = 128;
-		//int height = 328;
 		WindowDC.StretchBlt(m_MinRect.left, m_MinRect.top, m_MinRect.right,
 			m_MinRect.bottom, &memDC, 0, 0, width, height, SRCCOPY);
 		memDC.SelectObject(OldObj);
@@ -408,8 +420,6 @@ void CSystemsOptimizeDlg::DrawDialog(UINT Flags)
 		OldObj = memDC.SelectObject(&bitmapCloseBtn);
 		int width = bitmapInfo.bmiHeader.biWidth;
 		int height = bitmapInfo.bmiHeader.biHeight;
-		//int width = 128;
-		//int height = 328;
 		WindowDC.StretchBlt(m_CloseRect.left, m_CloseRect.top, m_CloseRect.right,
 			m_CloseRect.bottom, &memDC, 0, 0, width, height, SRCCOPY);
 		memDC.SelectObject(OldObj);

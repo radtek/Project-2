@@ -16,6 +16,7 @@ CLitterDlg::CLitterDlg(CWnd *pParent /*=NULL*/)
 	: CDialog(CLitterDlg::IDD, pParent)
 {
 	//{{AFX_DATA_INIT(CLitterDlg)
+
 	//}}AFX_DATA_INIT
 }
 

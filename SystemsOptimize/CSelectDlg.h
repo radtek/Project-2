@@ -14,16 +14,26 @@
 class CSelectDlg : public CDialog
 {
 public:
+	//------------------------------------------------
 	CSelectDlg(CWnd* pParent = NULL);
 
 	enum { IDD = IDD_SELECT_DIALOG };
 
 protected:
+	//------------------------------------------------
 	virtual void DoDataExchange(CDataExchange* pDX);
-
 	virtual BOOL OnInitDialog();
+	
+	//------------------------------------------------
+	/*
+	* 选择垃圾文件类型确定函数
+	*/
 	afx_msg void OnButok();
+	/*
+	* 选择垃圾文件类型取消函数
+	*/
 	afx_msg void OnButcancel();
+
 	afx_msg HBRUSH OnCtlColor(CDC* pDC, CWnd* pWnd, UINT nCtlColor);
 	//}}AFX_MSG
 	DECLARE_MESSAGE_MAP()

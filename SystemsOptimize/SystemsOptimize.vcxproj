@@ -188,10 +188,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CContralDlg.h" />
+    <ClInclude Include="CCustomMenu.h" />
     <ClInclude Include="CDiskDlg.h" />
     <ClInclude Include="CIconBtn.h" />
     <ClInclude Include="CLitterDlg.h" />
     <ClInclude Include="CSelectDlg.h" />
+    <ClInclude Include="CTaskDlg.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
@@ -201,10 +203,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CContralDlg.cpp" />
+    <ClCompile Include="CCustomMenu.cpp" />
     <ClCompile Include="CDiskDlg.cpp" />
     <ClCompile Include="CIconBtn.cpp" />
     <ClCompile Include="CLitterDlg.cpp" />
     <ClCompile Include="CSelectDlg.cpp" />
+    <ClCompile Include="CTaskDlg.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -218,9 +222,23 @@
     <ResourceCompile Include="SystemsOptimize.rc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\..\..\math-model-computer\c++\study\c++project\project\systemsoptimize\res\ribbon1.mfcribbon-ms" />
     <None Include="res\SystemsOptimize.rc2" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\..\..\math-model-computer\C++\Study\C++Project\Project\SystemsOptimize\res\access.ICO" />
+    <Image Include="..\..\..\..\math-model-computer\C++\Study\C++Project\Project\SystemsOptimize\res\appwiz.ICO" />
+    <Image Include="..\..\..\..\math-model-computer\C++\Study\C++Project\Project\SystemsOptimize\res\Computer.ico" />
+    <Image Include="..\..\..\..\math-model-computer\C++\Study\C++Project\Project\SystemsOptimize\res\desk.ICO" />
+    <Image Include="..\..\..\..\math-model-computer\C++\Study\C++Project\Project\SystemsOptimize\res\hdwwiz.ICO" />
+    <Image Include="..\..\..\..\math-model-computer\C++\Study\C++Project\Project\SystemsOptimize\res\internet.ICO" />
+    <Image Include="..\..\..\..\math-model-computer\C++\Study\C++Project\Project\SystemsOptimize\res\intl.ICO" />
+    <Image Include="..\..\..\..\math-model-computer\C++\Study\C++Project\Project\SystemsOptimize\res\keyboard.ICO" />
+    <Image Include="..\..\..\..\math-model-computer\C++\Study\C++Project\Project\SystemsOptimize\res\mmsys.ICO" />
+    <Image Include="..\..\..\..\math-model-computer\C++\Study\C++Project\Project\SystemsOptimize\res\mouse.ICO" />
+    <Image Include="..\..\..\..\math-model-computer\C++\Study\C++Project\Project\SystemsOptimize\res\sysdm.ICO" />
+    <Image Include="..\..\..\..\math-model-computer\C++\Study\C++Project\Project\SystemsOptimize\res\SystemsOptimize.ico" />
+    <Image Include="..\..\..\..\math-model-computer\C++\Study\C++Project\Project\SystemsOptimize\res\timedate.ICO" />
     <Image Include="res\access.ICO" />
     <Image Include="res\appwiz.ICO" />
     <Image Include="res\closebutton.bmp" />
